@@ -9,7 +9,7 @@ import NextLink from "next/link";
 import { cn } from "@heroui/react";
 
 import { websiteConfig } from "@/config/website";
-import { Pokeball } from "./icons/pokeball";
+import { PokeballIcon } from "./icons/pokeball-icon";
 
 export const Navbar = () => {
   return (
@@ -17,7 +17,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Pokeball />
+            <PokeballIcon />
             <p className="font-bold text-inherit">Pokémon Explorer</p>
           </NextLink>
         </NavbarBrand>

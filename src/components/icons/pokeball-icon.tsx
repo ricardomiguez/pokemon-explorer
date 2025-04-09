@@ -1,7 +1,7 @@
 import { IconSvgProps } from "@/shared/types";
 import * as React from "react";
 
-export const Pokeball: React.FC<IconSvgProps> = ({
+export const PokeballIcon: React.FC<IconSvgProps> = ({
   size = 32,
   width,
   height,
