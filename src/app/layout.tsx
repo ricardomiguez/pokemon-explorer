@@ -4,6 +4,7 @@ import { fontSans } from "@/config/fonts";
 import { cn } from "@heroui/react";
 import { Metadata } from "next";
 import { websiteConfig } from "@/config/website";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <HeroUIProvider>
           <div className="relative flex flex-col h-screen">
+            <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
             </main>
