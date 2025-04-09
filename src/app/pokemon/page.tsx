@@ -5,5 +5,5 @@ export const metadata: Metadata = {
 };
 
 export default function PokemonPage() {
-  return <h1>Pokémon</h1>;
+  return <h1>Search for Pokémon</h1>;
 }
