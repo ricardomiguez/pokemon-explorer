@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pokémon",
+};
+
 export default function PokemonPage() {
-  return <h1>Pokemon</h1>;
+  return <h1>Pokémon</h1>;
 }
