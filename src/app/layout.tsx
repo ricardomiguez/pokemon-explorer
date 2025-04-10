@@ -5,6 +5,7 @@ import { cn } from "@heroui/react";
 import { Metadata } from "next";
 import { websiteConfig } from "@/config/website";
 import { Navbar } from "@/components/navbar";
+import { ApolloWrapper } from "@/lib/ApolloWrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -30,14 +31,16 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           fontSans.className
         )}
       >
-        <HeroUIProvider>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-          </div>
-        </HeroUIProvider>
+        <ApolloWrapper>
+          <HeroUIProvider>
+            <div className="relative flex flex-col h-screen">
+              <Navbar />
+              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+                {children}
+              </main>
+            </div>
+          </HeroUIProvider>
+        </ApolloWrapper>
       </body>
     </html>
   );

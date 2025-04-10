@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.6",
+    "@apollo/client-integration-nextjs": "^0.12.1",
     "@heroui/react": "^2.7.6",
     "framer-motion": "^12.6.3",
     "lucide-react": "^0.487.0",
