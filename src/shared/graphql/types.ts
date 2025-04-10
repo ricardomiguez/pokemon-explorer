@@ -22,3 +22,16 @@ export interface Pokemon {
 export interface GetPokemonsByNameOrType {
   pokemon_v2_pokemon: Pokemon[];
 }
+
+export interface GetPokemonsByNameOrTypeVariables {
+  search: string;
+  limit: number;
+}
+
+export interface GetPokemonsByIds {
+  pokemon_v2_pokemon: Pokemon[];
+}
+
+export interface GetPokemonsByIdsVariables {
+  ids: number[];
+}

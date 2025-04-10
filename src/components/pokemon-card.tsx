@@ -69,11 +69,14 @@ export const PokemonCard = ({
         />
       </CardBody>
       <CardFooter className="p-0 mt-4 flex flex-col gap-4 justify-between items-start h-full">
-        <h4 className="px-3 font-bold text-lg capitalize">{pokemon?.name}</h4>
+        <h2 className="px-3 font-bold capitalize">{pokemon?.name}</h2>
         <div className="flex justify-between w-full items-end">
           <div className="flex flex-col gap-1 w-full -pl-1">
-            {pokemon?.pokemon_v2_pokemontypes.map((type, index) => (
-              <Chip key={index} className="text-xs rounded-full capitalize">
+            {pokemon?.pokemon_v2_pokemontypes.map((type) => (
+              <Chip
+                key={`pokemon_id_${pokemon.id}_${type.pokemon_v2_type.name}_type_chip`}
+                className="text-xs rounded-full capitalize"
+              >
                 {type.pokemon_v2_type.name}
               </Chip>
             ))}

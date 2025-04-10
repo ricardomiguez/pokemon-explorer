@@ -9,5 +9,9 @@ export const websiteConfig = {
       label: "Pokémon",
       href: "/pokemon",
     },
+    {
+      label: "Favorites",
+      href: "/favorites",
+    },
   ],
 };

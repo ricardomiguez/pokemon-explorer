@@ -1,5 +1,6 @@
 import { PokemonList } from "@/components/pokemon-list";
 import { SearchInput } from "@/components/search-input";
+import { messages } from "@/messages/en";
 import {
   DEFAULT_SEARCH_PARAMS_VALUES,
   SEARCH_PARAMS_KEYS,
@@ -7,7 +8,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pokémon",
+  title: messages.pokemonList.title,
 };
 
 interface PokemonPageProps {

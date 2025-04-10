@@ -28,3 +28,20 @@ export const GET_POKEMONS_BY_NAME_OR_TYPE = gql`
     }
   }
 `;
+
+export const GET_POKEMONS_BY_IDS = gql`
+  query GetPokemonsByIds($ids: [Int!]) {
+    pokemon_v2_pokemon(where: { id: { _in: $ids } }) {
+      id
+      name
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+        }
+      }
+      pokemon_v2_pokemonsprites {
+        sprites
+      }
+    }
+  }
+`;

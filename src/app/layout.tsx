@@ -33,9 +33,9 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       >
         <ApolloWrapper>
           <HeroUIProvider>
-            <div className="relative flex flex-col h-screen">
+            <div className="relative flex flex-col h-screen overflow-y-scroll">
               <Navbar />
-              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              <main className="container mx-auto max-w-7xl py-16 px-6 flex-grow">
                 {children}
               </main>
             </div>
