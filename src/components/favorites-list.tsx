@@ -36,8 +36,8 @@ export const FavoritesList = () => {
 
   if (loading)
     return (
-      <div className="grid auto-rows-auto grid-cols-10 grid-rows-1 gap-8 mt-16">
-        <LoadingState className="col-span-2" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12 lg:mt-16">
+        <LoadingState className="col-span-1" />
       </div>
     );
 
@@ -55,12 +55,12 @@ export const FavoritesList = () => {
     );
 
   return (
-    <div className="grid auto-rows-auto grid-cols-10 grid-rows-1 gap-8 mt-16">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12 lg:mt-16">
       {data?.pokemon_v2_pokemon.map((pokemon) => (
         <PokemonCard
           key={`pokemon_id_${pokemon.id}`}
           pokemon={pokemon}
-          className="col-span-2"
+          className="col-span-1"
         />
       ))}
     </div>
