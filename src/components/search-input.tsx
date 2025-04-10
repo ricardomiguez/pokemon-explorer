@@ -1,6 +1,7 @@
 "use client";
 
-import { Form, Input, Kbd } from "@heroui/react";
+import { messages } from "@/messages/en";
+import { Form, Input, Kbd, Spinner } from "@heroui/react";
 import { SearchIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState, useTransition } from "react";
@@ -54,10 +55,14 @@ export const SearchInput = ({
             <Kbd className="hidden lg:inline-block" keys={["enter"]} />
           }
           labelPlacement="outside"
-          placeholder="Search Pokémon by name or type"
+          placeholder={messages.searchInput.placeholder}
           disabled={isPending}
           startContent={
-            <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
+            !isPending ? (
+              <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
+            ) : (
+              <Spinner className="px-0.5" size="sm" />
+            )
           }
           type="search"
           value={searchInputValue}

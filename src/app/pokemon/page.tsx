@@ -1,3 +1,4 @@
+import { PokemonList } from "@/components/pokemon-list";
 import { SearchInput } from "@/components/search-input";
 import {
   DEFAULT_SEARCH_PARAMS_VALUES,
@@ -22,9 +23,12 @@ export default async function PokemonPage({
     DEFAULT_SEARCH_PARAMS_VALUES.SEARCH) as string;
 
   return (
-    <SearchInput
-      searchParamsKey={SEARCH_PARAMS_KEYS.SEARCH}
-      searchParamsValue={currentSearchValue}
-    />
+    <>
+      <SearchInput
+        searchParamsKey={SEARCH_PARAMS_KEYS.SEARCH}
+        searchParamsValue={currentSearchValue}
+      />
+      <PokemonList searchParamsValue={currentSearchValue} />
+    </>
   );
 }
