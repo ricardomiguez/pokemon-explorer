@@ -1,7 +1,7 @@
 "use client";
 
 import { Pokemon } from "@/shared/graphql/types";
-import { getTypeColorByType } from "@/shared/utils/helpers";
+// import { getTypeColorByType } from "@/shared/utils/helpers"; // TODO: fix issue where typeColor isn’t being rendered correctly on the component
 import {
   Button,
   Card,
@@ -74,13 +74,13 @@ export const PokemonCard = ({
         <div className="flex justify-between w-full items-end">
           <div className="flex flex-col gap-1 w-full -pl-1">
             {pokemon?.pokemon_v2_pokemontypes.map((type) => {
-              const typeColor = getTypeColorByType(type.pokemon_v2_type.name);
+              // const typeColor = getTypeColorByType(type.pokemon_v2_type.name); // TODO: fix issue where typeColor isn’t being rendered correctly on the component
               return (
                 <Chip
                   key={`pokemon_id_${pokemon.id}_${type.pokemon_v2_type.name}_type_chip`}
                   className={cn(
-                    "text-xs rounded-full capitalize text-white",
-                    typeColor
+                    "text-xs rounded-full capitalize text-white bg-gray-400"
+                    // typeColor // TODO: fix issue where typeColor isn’t being rendered correctly on the component
                   )}
                 >
                   {type.pokemon_v2_type.name}
