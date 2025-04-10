@@ -1,6 +1,7 @@
 "use client";
 
 import { Pokemon } from "@/shared/graphql/types";
+import { getTypeColorByType } from "@/shared/utils/helpers";
 import {
   Button,
   Card,
@@ -72,14 +73,20 @@ export const PokemonCard = ({
         <h2 className="px-3 font-bold capitalize">{pokemon?.name}</h2>
         <div className="flex justify-between w-full items-end">
           <div className="flex flex-col gap-1 w-full -pl-1">
-            {pokemon?.pokemon_v2_pokemontypes.map((type) => (
-              <Chip
-                key={`pokemon_id_${pokemon.id}_${type.pokemon_v2_type.name}_type_chip`}
-                className="text-xs rounded-full capitalize"
-              >
-                {type.pokemon_v2_type.name}
-              </Chip>
-            ))}
+            {pokemon?.pokemon_v2_pokemontypes.map((type) => {
+              const typeColor = getTypeColorByType(type.pokemon_v2_type.name);
+              return (
+                <Chip
+                  key={`pokemon_id_${pokemon.id}_${type.pokemon_v2_type.name}_type_chip`}
+                  className={cn(
+                    "text-xs rounded-full capitalize text-white",
+                    typeColor
+                  )}
+                >
+                  {type.pokemon_v2_type.name}
+                </Chip>
+              );
+            })}
           </div>
           <Button
             isIconOnly
