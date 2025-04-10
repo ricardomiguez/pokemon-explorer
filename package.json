@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest --watch"
   },
   "dependencies": {
     "@apollo/client": "^3.13.6",

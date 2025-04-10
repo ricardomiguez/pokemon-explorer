@@ -90,9 +90,9 @@ export const PokemonCard = ({
           </div>
           <Button
             isIconOnly
-            aria-label="Like"
+            aria-label="Favorite"
             className={`h-7 ${isFavorite ? "bg-pink-100" : "bg-white"}`}
-            onClick={toggleFavorite}
+            onPress={toggleFavorite}
           >
             <HeartIcon
               className={
