@@ -8,6 +8,7 @@ import { DEFAULT_LIMIT_VALUE } from "@/shared/utils/constants";
 import { ErrorState } from "./error-state";
 import { LoadingState } from "./loading-state";
 import { messages } from "@/messages/en";
+import { PokemonCard } from "./pokemon-card";
 
 interface PokemonListProps {
   searchParamsValue: string;
@@ -49,10 +50,14 @@ export const PokemonList = ({
     return <EmptyState description={messages.emptyState.notFound} />;
 
   return (
-    <div className="mt-16">
-      <h1 className="text-default-400 flex h-full w-full items-center justify-center">
-        Pokémon List
-      </h1>
+    <div className="grid auto-rows-auto grid-cols-10 grid-rows-1 gap-8 mt-16">
+      {data?.pokemon_v2_pokemon.map((pokemon) => (
+        <PokemonCard
+          key={`pokemon_id_${pokemon.id}`}
+          pokemon={pokemon}
+          className="col-span-2"
+        />
+      ))}
     </div>
   );
 };

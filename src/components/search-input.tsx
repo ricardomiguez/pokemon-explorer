@@ -29,8 +29,8 @@ export const SearchInput = ({
     [searchParams]
   );
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = (event: React.FormEvent) => {
+    event.preventDefault();
 
     startTransition(() => {
       router.replace(

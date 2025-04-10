@@ -1,12 +1,12 @@
 import { Card, cn, Skeleton } from "@heroui/react";
 
 interface LoadingStateProps {
-  className: string;
+  className?: string;
 }
 
 export const LoadingState = ({ className }: Readonly<LoadingStateProps>) => {
   return (
-    <Card className={cn("space-y-5 p-4", className)} radius="lg">
+    <Card className={cn("space-y-5 p-4 h-[256px]", className)} radius="lg">
       <Skeleton className="rounded-lg">
         <div className="h-24 rounded-lg bg-default-300" />
       </Skeleton>
