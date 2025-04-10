@@ -6,7 +6,11 @@ interface LoadingStateProps {
 
 export const LoadingState = ({ className }: Readonly<LoadingStateProps>) => {
   return (
-    <Card className={cn("space-y-5 p-4 h-[256px]", className)} radius="lg">
+    <Card
+      className={cn("space-y-5 p-4 h-[256px]", className)}
+      radius="lg"
+      aria-label="loading"
+    >
       <Skeleton className="rounded-lg">
         <div className="h-24 rounded-lg bg-default-300" />
       </Skeleton>
