@@ -2,6 +2,10 @@
 
 This is a **Pokemon Explorer** application built with **Next.js**. It allows you to explore Pokémon and manage your favorite ones.
 
+## Live Version
+
+You can access the live version of the application [here](https://pokemon-explorer-khaki.vercel.app/pokemon).
+
 ## Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
