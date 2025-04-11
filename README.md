@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokemon Explorer
+
+This is a **Pokemon Explorer** application built with **Next.js**. It allows you to explore Pokémon and manage your favorite ones.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up and run the project on your local machine.
+
+### Prerequisites
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) - recommended for managing Node.js versions
+
+### Installation
+
+1. **Clone the repository**
+
+```bash
+git clone git@github.com:ricardomiguez/pokemon-explorer.git
+cd pokemon-explorer
+```
+
+2. **Use the correct Node.js version**
+
+```bash
+nvm install
+nvm use
+```
+
+If you don't have nvm installed, follow the [NVM Installation Guide](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+3. **Install dependencies**
+
+```bash
+npm install
+```
+
+4. **Configure environment variables**
+
+```bash
+echo "NEXT_PUBLIC_GRAPHQL_API_URL=https://beta.pokeapi.co/graphql/v1beta" >> .env.local
+```
+
+## Running the Application
+
+### Development Mode
+
+Start the development server with hot-reloading:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Access the application at [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Mode
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build and run the application in production mode:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Access the production build at [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Unit Tests
 
-## Deploy on Vercel
+Run unit tests using Jest:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### End-to-End Tests
+
+Run end-to-end tests using Playwright:
+
+```bash
+npm run test:e2e
+```
+
+Playwright will test the application running on port 3000.
+
+## Storybook
+
+Run Storybook to test components:
+
+```bash
+npm run storybook
+```
+
+Access Storybook at [http://localhost:6006](http://localhost:6006)
+
+To build a static version of Storybook:
+
+```bash
+npm run build-storybook
+```
