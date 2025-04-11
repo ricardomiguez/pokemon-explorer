@@ -9,7 +9,7 @@ const config: Config = {
   verbose: true,
   coverageProvider: "v8",
   testEnvironment: "jsdom",
-  testPathIgnorePatterns: ["/node_modules/", "/__mocks__/"],
+  testPathIgnorePatterns: ["/node_modules/", "/__mocks__/", "/__e2e__/"],
 };
 
 export default createJestConfig(config);
