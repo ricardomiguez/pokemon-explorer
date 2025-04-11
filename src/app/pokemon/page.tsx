@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 interface PokemonPageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ search: string }>;
 }
 
 export default async function PokemonPage({
