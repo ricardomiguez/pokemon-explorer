@@ -22,7 +22,7 @@ describe("PokemonList", () => {
       </MockedProvider>
     );
 
-    expect(screen.getByLabelText("loading")).toBeInTheDocument();
+    expect(screen.getByLabelText("Loading")).toBeInTheDocument();
   });
 
   it("should render error state", async () => {
@@ -67,11 +67,11 @@ describe("PokemonList", () => {
       </MockedProvider>
     );
 
-    const notFound = await screen.findByText(
+    const emptyStateNotFound = await screen.findByText(
       messages.pokemonList.emptyState.notFound
     );
 
-    expect(notFound).toBeInTheDocument();
+    expect(emptyStateNotFound).toBeInTheDocument();
   });
 
   it("should render list of Pokémon", async () => {

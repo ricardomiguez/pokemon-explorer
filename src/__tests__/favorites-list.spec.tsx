@@ -22,7 +22,7 @@ describe("FavoritesList", () => {
       </MockedProvider>
     );
 
-    expect(screen.getByLabelText("loading")).toBeInTheDocument();
+    expect(screen.getByLabelText("Loading")).toBeInTheDocument();
   });
 
   it("should render error state", async () => {
@@ -75,11 +75,11 @@ describe("FavoritesList", () => {
       </MockedProvider>
     );
 
-    const notFound = await screen.findByText(
+    const emptyStateNotFound = await screen.findByText(
       messages.favoritesList.emptyState.notFound
     );
 
-    expect(notFound).toBeInTheDocument();
+    expect(emptyStateNotFound).toBeInTheDocument();
   });
 
   it("should render list of Favorites", async () => {
