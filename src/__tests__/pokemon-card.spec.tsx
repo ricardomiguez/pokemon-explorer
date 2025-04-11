@@ -26,7 +26,7 @@ describe("PokemonCard", () => {
   });
 
   it("should show a red heart icon if the Pokémon is in favorites", () => {
-    localStorage.setItem("favoritePokemon", JSON.stringify([pokemonId]));
+    localStorage.setItem("favoritePokemonIds", JSON.stringify([pokemonId]));
 
     render(<PokemonCard pokemon={pokemon} />);
 
@@ -38,7 +38,7 @@ describe("PokemonCard", () => {
   });
 
   it("should show a gray heart icon if the Pokémon is not in favorites", () => {
-    localStorage.setItem("favoritePokemon", JSON.stringify([]));
+    localStorage.setItem("favoritePokemonIds", JSON.stringify([]));
 
     render(<PokemonCard pokemon={pokemon} />);
 
@@ -50,7 +50,7 @@ describe("PokemonCard", () => {
   });
 
   it("should add Pokémon to favorites on button click when not favorited", async () => {
-    localStorage.setItem("favoritePokemon", JSON.stringify([]));
+    localStorage.setItem("favoritePokemonIds", JSON.stringify([]));
 
     const setItemSpy = jest.spyOn(Storage.prototype, "setItem");
 
@@ -63,13 +63,13 @@ describe("PokemonCard", () => {
     });
 
     expect(setItemSpy).toHaveBeenCalledWith(
-      "favoritePokemon",
+      "favoritePokemonIds",
       JSON.stringify([pokemonId])
     );
   });
 
   it("should remove Pokémon from favorites on button click when already favorited", async () => {
-    localStorage.setItem("favoritePokemon", JSON.stringify([pokemonId]));
+    localStorage.setItem("favoritePokemonIds", JSON.stringify([pokemonId]));
 
     const setItemSpy = jest.spyOn(Storage.prototype, "setItem");
 
@@ -82,7 +82,7 @@ describe("PokemonCard", () => {
     });
 
     expect(setItemSpy).toHaveBeenCalledWith(
-      "favoritePokemon",
+      "favoritePokemonIds",
       JSON.stringify([])
     );
   });

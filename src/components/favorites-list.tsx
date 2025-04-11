@@ -17,7 +17,7 @@ export const FavoritesList = () => {
   const [ids, setIds] = useState<number[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("favoritePokemon");
+    const stored = localStorage.getItem("favoritePokemonIds");
     if (stored) {
       const parsed = JSON.parse(stored);
       setIds(parsed);

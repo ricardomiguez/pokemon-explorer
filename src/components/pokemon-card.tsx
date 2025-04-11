@@ -15,7 +15,9 @@ import { HeartIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface PokemonCardProps {
+  /** Data used to populate the card */
   pokemon: Pokemon | undefined;
+  /** Optional class name for custom layout or spacing */
   className?: string;
 }
 
@@ -27,14 +29,14 @@ export const PokemonCard = ({
 
   useEffect(() => {
     const favorites = JSON.parse(
-      localStorage.getItem("favoritePokemon") || "[]"
+      localStorage.getItem("favoritePokemonIds") || "[]"
     );
     setIsFavorite(favorites.includes(pokemon?.id));
   }, [pokemon?.id]);
 
   const toggleFavorite = () => {
     const favorites = JSON.parse(
-      localStorage.getItem("favoritePokemon") || "[]"
+      localStorage.getItem("favoritePokemonIds") || "[]"
     );
 
     let updatedFavorites;
@@ -47,13 +49,16 @@ export const PokemonCard = ({
       setIsFavorite(true);
     }
 
-    localStorage.setItem("favoritePokemon", JSON.stringify(updatedFavorites));
+    localStorage.setItem(
+      "favoritePokemonIds",
+      JSON.stringify(updatedFavorites)
+    );
   };
 
   return (
     <Card
       className={cn(
-        "space-y-5 p-4 h-[256px] justify-start animate-reveal",
+        "space-y-5 p-4 h-[256px] justify-start animate-reveal min-w-[192px]",
         className
       )}
       radius="lg"
